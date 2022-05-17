@@ -43,6 +43,8 @@
         socket.on('my response', function(msg) {
             console.log(msg.data)
         });
+
+        socket.emit("receive", "Hellot there my little chap!!")
         /*
         $('form#emit').submit(function(event) {
             socket.emit('my event', {data: $('#emit_data').val()});
