@@ -11,14 +11,15 @@ def index():
     return render_template("index.html")
 
 
+'''
 @socketio.on("my event")
 def test_message(message):
     emit("my response", {"data": message["data"]})
 
-
 @socketio.on("my broadcast event")
 def test_message(message):
     emit("my respones", {"data": message["data"]}, broadcast=True)
+'''
 
 
 @socketio.on("connect")
