@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LiveStreaming</title>
+</head>
+<body>
+    <hi>Live streaming</hi>
+    <div>
+        <img src="{{ url_for('video') }}" width="50%">
+    </div>
+    <form method="post" action="/">
+        <input type="submit" value="ON" name="on_button">
+        <input type="submit" value="OFF" name="off_button">
+    </form>
+</body>
+</html>

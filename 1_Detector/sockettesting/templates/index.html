@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hello Camera</title>
+    <style>
+        #container {
+            margin: 0 auto;
+            width: 500px;
+            height: 375px;
+            border: 10px #333 solid;
+        }
+        #videoElement {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <video autoplay="true" id="videoElement"></video>
+
+    </div>
+
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
+        var socket = io.connect("window.location.protocol + '//' + document.domain + ':' + location.port");
+
+        //var socket = io();
+        socket.on('my response', function(msg) {
+            console.log(msg.data)
+        });
+        /*
+        $('form#emit').submit(function(event) {
+            socket.emit('my event', {data: $('#emit_data').val()});
+            return false;
+        });
+        $('form#broadcast').submit(function(event) {
+            socket.emit('my broadcast event', {data: $('#broadcast_data').val()});
+            return false;
+        });
+
+         */
+
+    </script>
+</body>
+
+</html>
