@@ -41,7 +41,7 @@ print("Code completed")
 import cv2
 
 
-def get_face_coordinates(img):
+def create_coordinates(img):
     trained_face_data = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
     grayscaled_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     face_coordinates = trained_face_data.detectMultiScale(grayscaled_img)
@@ -50,3 +50,11 @@ def get_face_coordinates(img):
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
     cv2.imshow("output", img)  # Show image
     cv2.waitKey(0)
+
+
+def show(img):
+    print(img)
+    '''
+    cv2.imshow("output", im)
+    cv2.waitKey(0)
+    '''

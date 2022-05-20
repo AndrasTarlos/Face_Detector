@@ -20,8 +20,12 @@
 <body>
 
     <div id="container">
-    <video autoplay playsinline id="videoElement"></video>
+    <video autoplay playsinline  id="videoElement"></video>
     <canvas id="canvas"  width="400" height="300"></canvas>
+    </div>
+
+    <div class="controller">
+        <button id="on_off">Off</button>
     </div>
 
     <div class = 'video'>
@@ -38,7 +42,7 @@
 
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
-        const video = document.querySelector("#videoElement");
+        let video = document.querySelector("#videoElement");
 
         video.width = 400;
         video.height = 300;
